@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class Controller {
+public class ApiController {
 
-    private static Logger _log = LoggerFactory.getLogger(Controller.class);
+    private static Logger log = LoggerFactory.getLogger(ApiController.class);
 
     @GetMapping("/{path}")
     public ResponseEntity sayHello(@PathVariable String path, @RequestParam String name) {
-        _log.info("[sayHello()] Request Params: Path: {} | Name: {}", path, name);
+        log.info("[sayHello()] Request Params: Path: {} | Name: {}", path, name);
         return ResponseEntity.ok("Hello " + name + " from /" + path);
     }
 }
